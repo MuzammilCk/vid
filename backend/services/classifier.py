@@ -12,6 +12,7 @@ This module provides AI-powered video classification with:
 import os
 import json
 import re
+import asyncio
 from typing import Optional, List
 from pathlib import Path
 from datetime import datetime
@@ -23,15 +24,16 @@ from utils.prompt_templates import (
     CLASSIFICATION_PROMPT,
     CLASSIFICATION_PROMPT_WITH_IMAGES
 )
+from config.gemini_models import GeminiModel, RecommendedModels
 
 # Configure Gemini API
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 if GOOGLE_API_KEY:
     genai.configure(api_key=GOOGLE_API_KEY)
 
-# Model selection
-PRIMARY_MODEL = "gemini-2.0-flash-exp"  # Fast, multimodal
-FALLBACK_MODEL = "gemini-1.5-pro"      # Stable, production
+# Model selection (using centralized config)
+PRIMARY_MODEL = RecommendedModels.CLASSIFICATION.value
+FALLBACK_MODEL = RecommendedModels.CLASSIFICATION_FALLBACK.value
 
 # Generation config
 GENERATION_CONFIG = {
