@@ -7,14 +7,14 @@ export default function Home() {
                         🧠 VidBrain AI
                     </h1>
                     <p className="text-xl text-gray-300">
-                        Extract structured insights from any YouTube video using AI
+                        Extract insights from YouTube videos
                     </p>
                 </div>
 
                 <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl">
                     <div className="mb-6">
                         <label className="block text-white text-sm font-medium mb-2">
-                            YouTube Video URL
+                            YouTube URL
                         </label>
                         <input
                             type="text"
@@ -24,13 +24,8 @@ export default function Home() {
                     </div>
 
                     <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-lg">
-                        Analyze Video
+                        Analyze
                     </button>
-                </div>
-
-                <div className="mt-16 text-center text-gray-400 text-sm">
-                    <p>Phase 0: Project Setup Complete ✅</p>
-                    <p className="mt-2">Ready to build Phase 1: YouTube Data Extraction</p>
                 </div>
             </div>
         </main>
